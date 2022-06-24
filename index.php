@@ -17,8 +17,8 @@ Mo li prendo a calci sti portoni
 Sguardo in alto tipo scalatori
 Quindi scusa mamma se sto sempre fuori";
 
-$inputCensor = $_GET[`censored`];
-$censored = str_replace ($inputCensor, "***", $text);
+$inputCensor = $_GET["censored"];
+$censoredtext = str_replace ($inputCensor, "***" , $text);
  ?>
 
 <!DOCTYPE html>
@@ -33,17 +33,15 @@ $censored = str_replace ($inputCensor, "***", $text);
     <h1>testo originale:</h1>
     <p> <?= $text?></p>
     
-    <form action="" method="get">
+ <form action="" method="get">
         <label for="censura">censura</label>
         <input type="text" name="censored">
         <button>inserisci la parola da censurare </button>
-
-       
-
-    </form>
+ </form>
     <h2>testo corretto:</h2>
-    <p><?=$censored?></p>
-    <p>lunghezza testo: <?= strlen($censored)?></p>
+    <p><?=$censoredtext?></p>
+    <p>lunghezza testo: <?= strlen($censoredtext)?></p>
+    
         
 </body>
 </html>
